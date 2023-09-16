@@ -14,11 +14,23 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return tie;
     }   else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper") {
-            return win;
+            return win; 
     }   else if (playerSelection === "rock" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "rock") {
             return lose;
     }   else {
             return "Invalid input! Try again.";
     }
 }
+
+function game() {
+    // LOOPING PLAYROUND UNTIL SOMEONE WINS
+    // While playerPoints or computerPoints is not equal to 5
+    // We continuously call the function playRound()
+    // If player wins, +1 to playerPoints. Else if computer wins, +1 to computerPoints. Else don't add anything and play another round.
+    // When either playerPoints or computerPoints gets to 5, we call the winner and terminate the program
+    playerSelection = prompt("Rock, paper, or scissors?");
+    computerSelection = getComputerChoice();
+
+}
+
 
