@@ -33,8 +33,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
-
 function game() {
     // LOOPING PLAYROUND UNTIL SOMEONE WINS
     // While playerPoints or computerPoints is not equal to 5
