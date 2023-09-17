@@ -18,15 +18,15 @@ function playRound(playerSelection, computerSelection) {
     }   else if (playerSelection === "rock" && computerSelection === "scissors" ||
             playerSelection === "paper" && computerSelection === "rock" ||
             playerSelection === "scissors" && computerSelection === "paper") {
-            ++playerScore;
             alert(win);
+            ++playerScore;
             alert(`Player: ${playerScore}, Computer: ${computerScore}`); 
             
     }   else if (playerSelection === "rock" && computerSelection === "paper" ||
             playerSelection === "paper" && computerSelection === "scissors" ||
             playerSelection === "scissors" && computerSelection === "rock") {
-            ++computerScore;
             alert(lose);
+            ++computerScore;
             alert(`Player: ${playerScore}, Computer: ${computerScore}`); 
     }   else {
             alert("Invalid input, try again.");
