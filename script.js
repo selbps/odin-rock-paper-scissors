@@ -14,35 +14,46 @@ function playRound(playerSelection, computerSelection) {
     let lose = "You lose!";
     let tie = "Tie! One more!";
     if (playerSelection === computerSelection) {
-        return tie;
-    }   else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper") {
+        alert(tie)
+    }   else if (playerSelection === "rock" && computerSelection === "scissors" ||
+            playerSelection === "paper" && computerSelection === "rock" ||
+            playerSelection === "scissors" && computerSelection === "paper") {
             ++playerScore;
+            alert(win);
             alert(`Player: ${playerScore}, Computer: ${computerScore}`); 
-            return win;
-    }   else if (playerSelection === "rock" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "rock") {
+            
+    }   else if (playerSelection === "rock" && computerSelection === "paper" ||
+            playerSelection === "paper" && computerSelection === "scissors" ||
+            playerSelection === "scissors" && computerSelection === "rock") {
             ++computerScore;
+            alert(lose);
             alert(`Player: ${playerScore}, Computer: ${computerScore}`); 
-            return lose;
     }   else {
-            return "Invalid input! Try again.";
+            alert("Invalid input, try again.");
     }
 }
+
+
 
 function game() {
     // LOOPING PLAYROUND UNTIL SOMEONE WINS
     // While playerPoints or computerPoints is not equal to 5
-    // We continuously call the function playRound()
+    // We call the function playRound()
     // If player wins, +1 to playerPoints. Else if computer wins, +1 to computerPoints. Else don't add anything and play another round.
     // When either playerPoints or computerPoints gets to 5, we call the winner and terminate the program
-    playerSelection = prompt("Rock, paper, or scissors?");
-    computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-    playerSelection = prompt("Rock, paper, or scissors?");
-    computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-    playerSelection = prompt("Rock, paper, or scissors?");
-    computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    while (playerScore != 5 || computerScore != 5) {
+        playerSelection = prompt("Rock, paper, or scissors?");
+        computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+        if (playerScore === 5) {
+            alert("You beat the computer!");
+            break;
+        }   else if (computerScore === 5) {
+            alert("Nice try!");
+            break;
+        }
+    }
+        
 }
 
 game();
