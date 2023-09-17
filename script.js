@@ -1,4 +1,6 @@
 const gameChoices = ["rock", "paper", "scissors"]
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     // Computer picks a game choice (rock, paper, scissors)
@@ -14,8 +16,12 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return tie;
     }   else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper") {
-            return win; 
+            ++playerScore;
+            alert(`Player: ${playerScore}, Computer: ${computerScore}`); 
+            return win;
     }   else if (playerSelection === "rock" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "rock") {
+            ++computerScore;
+            alert(`Player: ${playerScore}, Computer: ${computerScore}`); 
             return lose;
     }   else {
             return "Invalid input! Try again.";
@@ -30,7 +36,13 @@ function game() {
     // When either playerPoints or computerPoints gets to 5, we call the winner and terminate the program
     playerSelection = prompt("Rock, paper, or scissors?");
     computerSelection = getComputerChoice();
-
+    console.log(playRound(playerSelection, computerSelection));
+    playerSelection = prompt("Rock, paper, or scissors?");
+    computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+    playerSelection = prompt("Rock, paper, or scissors?");
+    computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
 }
 
-
+game();
