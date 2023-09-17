@@ -6,7 +6,8 @@ function getComputerChoice() {
     // Computer picks a game choice (rock, paper, scissors)
     let index = Math.floor(Math.random() * gameChoices.length);
     return gameChoices[index];
-    // First, we multiply Math.random() * gameChoices.length. Math.random() is between 0 and 1 multiplied by gameChoices.length which is the index of the array 'gameChoices'.
+    // First, we multiply Math.random() * gameChoices.length. Math.random() is between 0 and 1 multiplied by gameChoices.length 
+    // which is the index of the array 'gameChoices'.
 }
 
 function playRound(playerSelection, computerSelection) {
