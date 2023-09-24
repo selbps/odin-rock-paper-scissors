@@ -34,25 +34,25 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    // LOOPING PLAYROUND UNTIL SOMEONE WINS
-    // While playerPoints or computerPoints is not equal to 5
-    // We call the function playRound()
-    // If player wins, +1 to playerPoints. Else if computer wins, +1 to computerPoints. Else don't add anything and play another round.
-    // When either playerPoints or computerPoints gets to 5, we call the winner and terminate the program
-    while (playerScore != 5 || computerScore != 5) {
-        playerSelection = prompt("Rock, paper, or scissors?");
-        computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
-        if (playerScore === 5) {
-            alert("You beat the computer!");
-            break;
-        }   else if (computerScore === 5) {
-            alert("Nice try!");
-            break;
-        }
-    }
+// function game() {
+//     // LOOPING PLAYROUND UNTIL SOMEONE WINS
+//     // While playerPoints or computerPoints is not equal to 5
+//     // We call the function playRound()
+//     // If player wins, +1 to playerPoints. Else if computer wins, +1 to computerPoints. Else don't add anything and play another round.
+//     // When either playerPoints or computerPoints gets to 5, we call the winner and terminate the program
+//     while (playerScore != 5 || computerScore != 5) {
+//         playerSelection = prompt("Rock, paper, or scissors?");
+//         computerSelection = getComputerChoice();
+//         playRound(playerSelection, computerSelection);
+//         if (playerScore === 5) {
+//             alert("You beat the computer!");
+//             break;
+//         }   else if (computerScore === 5) {
+//             alert("Nice try!");
+//             break;
+//         }
+//     }
         
-}
+// }
 
-game();
+// game();
