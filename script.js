@@ -3,11 +3,11 @@ let playerScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    // Computer picks a game choice (rock, paper, scissors)
-    let index = Math.floor(Math.random() * gameChoices.length);
-    return gameChoices[index];
-    // First, we multiply Math.random() * gameChoices.length. Math.random() is between 0 and 1 multiplied by gameChoices.length 
-    // which is the index of the array 'gameChoices'.
+  // Computer picks a game choice (rock, paper, scissors)
+  let index = Math.floor(Math.random() * gameChoices.length);
+  return gameChoices[index];
+  // First, we multiply Math.random() * gameChoices.length. Math.random() is between 0 and 1 multiplied by gameChoices.length 
+  // which is the index of the array 'gameChoices'.
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -34,25 +34,19 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// function game() {
-//     // LOOPING PLAYROUND UNTIL SOMEONE WINS
-//     // While playerPoints or computerPoints is not equal to 5
-//     // We call the function playRound()
-//     // If player wins, +1 to playerPoints. Else if computer wins, +1 to computerPoints. Else don't add anything and play another round.
-//     // When either playerPoints or computerPoints gets to 5, we call the winner and terminate the program
-//     while (playerScore != 5 || computerScore != 5) {
-//         playerSelection = prompt("Rock, paper, or scissors?");
-//         computerSelection = getComputerChoice();
-//         playRound(playerSelection, computerSelection);
-//         if (playerScore === 5) {
-//             alert("You beat the computer!");
-//             break;
-//         }   else if (computerScore === 5) {
-//             alert("Nice try!");
-//             break;
-//         }
-//     }
-        
-// }
+const buttons = document.querySelectorAll('button');
 
-// game();
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    playerSelection = button.id;
+    computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    if (playerScore === 5) {
+      alert('You beat the computer!');
+      return;
+    } else if (computerScore === 5) {
+      alert('Nice try!');
+      return;
+    }
+  });
+});
