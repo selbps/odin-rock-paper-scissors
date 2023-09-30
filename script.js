@@ -44,7 +44,7 @@ buttons.forEach((button) => {
       result.textContent = 'You beat the computer!';
       return;
     } else if (computerScore === 5 && playerScore < 5) {
-      result.textContent = 'Nice try!';
+      result.textContent = 'You lost! Nice try!';
       return;
     }
   });
