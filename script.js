@@ -2,6 +2,10 @@ const gameChoices = ["rock", "paper", "scissors"]
 let playerScore = 0;
 let computerScore = 0;
 
+const buttons = document.querySelectorAll('button');
+const container = document.querySelector('#score-container');
+const result = document.querySelector('#result');
+
 function getComputerChoice() {
   // Computer picks a game choice (rock, paper, scissors)
   let index = Math.floor(Math.random() * gameChoices.length);
@@ -15,38 +19,42 @@ function playRound(playerSelection, computerSelection) {
     let lose = "You lose!";
     let tie = "Tie! One more!";
     if (playerSelection === computerSelection) {
-        alert(tie)
+        result.textContent = tie;
     }   else if (playerSelection === "rock" && computerSelection === "scissors" ||
             playerSelection === "paper" && computerSelection === "rock" ||
             playerSelection === "scissors" && computerSelection === "paper") {
-            alert(win);
-            ++playerScore;
-            alert(`Player: ${playerScore}, Computer: ${computerScore}`); 
+            result.textContent = win;
+            gameScore('player');
             
     }   else if (playerSelection === "rock" && computerSelection === "paper" ||
             playerSelection === "paper" && computerSelection === "scissors" ||
             playerSelection === "scissors" && computerSelection === "rock") {
-            alert(lose);
-            ++computerScore;
-            alert(`Player: ${playerScore}, Computer: ${computerScore}`); 
-    }   else {
-            alert("Invalid input, try again.");
+            result.textContent = lose;
+            gameScore('computer');
     }
 }
 
-const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     playerSelection = button.id;
     computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
-    if (playerScore === 5) {
-      alert('You beat the computer!');
+    if (playerScore === 5 && computerScore < 5) {
+      result.textContent = 'You beat the computer!';
       return;
-    } else if (computerScore === 5) {
-      alert('Nice try!');
+    } else if (computerScore === 5 && playerScore < 5) {
+      result.textContent = 'Nice try!';
       return;
     }
   });
 });
+
+function gameScore(winner) {
+  if (winner === 'player') {
+    playerScore++;
+  } else if (winner === 'computer') {
+    computerScore++;
+  }
+  container.textContent = `Player: ${playerScore}, Computer: ${computerScore}`;
+}
