@@ -21,6 +21,12 @@ body {
     margin: 300px 0;
 }
 
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    font: bold;
+}
+
 #button-wrapper {
     /* border: solid black; */
     display: flex;
