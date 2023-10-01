@@ -2,6 +2,7 @@ body {
     /* border: solid black; */
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
+    font-size: large;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,10 +26,15 @@ button {
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
     font: bold;
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #button-wrapper {
     /* border: solid black; */
     display: flex;
     justify-content: space-between;
+    gap: 15px;
 }
