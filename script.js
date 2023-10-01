@@ -8,6 +8,10 @@ const result = document.querySelector('#result');
 const reset = document.querySelector('#reset-button');
 const content = document.querySelector('.content-container');
 const div = document.querySelector('div');
+const wrapper = document.querySelector('#button-wrapper');
+
+// Start
+content.removeChild(reset);
 
 function getComputerChoice() {
   // Computer picks a game choice (rock, paper, scissors)
@@ -45,10 +49,18 @@ buttons.forEach((button) => {
     playRound(playerSelection, computerSelection);
     if (playerScore === 5) {
       result.textContent = 'You beat the computer!';
+      content.removeChild(wrapper);
+      content.appendChild(reset);
+      reset.textContent = 'One more?';
       resetGame();
     } else if (computerScore === 5) {
       result.textContent = 'You lost! Nice try!';
+      content.removeChild(wrapper);
+      content.appendChild(reset);
+      reset.textContent = 'Try again?';
       resetGame();
+    } else if (playerScore >= 5 || computerScore >= 5) {
+      button.disabled = true;
     }
   });
 });
@@ -63,12 +75,13 @@ function gameScore(winner) {
 }
 
 function resetGame() {
-  reset.textContent = 'One more?';
   reset.addEventListener('click', () => {
     playerScore = 0;
     computerScore = 0;
     container.textContent = `Player: ${playerScore}, Computer: ${computerScore}`;
     reset.textContent = '';
     result.textContent = '';
+    content.removeChild(reset);
+    content.insertBefore(wrapper, result);
   })
 }
