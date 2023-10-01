@@ -1,0 +1,28 @@
+body {
+    /* border: solid black; */
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    
+}
+
+.content-container {
+    /* border: solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    gap: 50px;
+    margin: 300px 0;
+}
+
+#button-wrapper {
+    /* border: solid black; */
+    display: flex;
+    justify-content: space-between;
+}
