@@ -23,20 +23,51 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     let win = "You win!";
+    let winAgain = 'On a roll!';
     let lose = "You lose!";
+    let loseAgain = 'Oh, you lost again.';
     let tie = "Tie! One more!";
     if (playerSelection === computerSelection) {
         result.textContent = tie;
-    }   else if (playerSelection === "rock" && computerSelection === "scissors" ||
+    }   else if ((playerSelection === "rock" && computerSelection === "scissors" ||
             playerSelection === "paper" && computerSelection === "rock" ||
-            playerSelection === "scissors" && computerSelection === "paper") {
+            playerSelection === "scissors" && computerSelection === "paper") & 
+            (playerScore === 0 || playerScore === 1)) {
             result.textContent = win;
             gameScore('player');
-            
-    }   else if (playerSelection === "rock" && computerSelection === "paper" ||
+    }   else if ((playerSelection === "rock" && computerSelection === "scissors" ||
+            playerSelection === "paper" && computerSelection === "rock" ||
+            playerSelection === "scissors" && computerSelection === "paper") & playerScore === 2) {
+            result.textContent = winAgain;
+            gameScore('player');
+    }   else if ((playerSelection === "rock" && computerSelection === "scissors" ||
+            playerSelection === "paper" && computerSelection === "rock" ||
+            playerSelection === "scissors" && computerSelection === "paper") & playerScore === 3) {
+            result.textContent = "We're getting closer!";
+            gameScore('player');
+    }   else if ((playerSelection === "rock" && computerSelection === "scissors" ||
+            playerSelection === "paper" && computerSelection === "rock" ||
+            playerSelection === "scissors" && computerSelection === "paper") & playerScore === 4) {
+            result.textContent = 'Last one!';
+            gameScore('player');
+    }   else if ((playerSelection === "rock" && computerSelection === "paper" ||
             playerSelection === "paper" && computerSelection === "scissors" ||
-            playerSelection === "scissors" && computerSelection === "rock") {
+            playerSelection === "scissors" && computerSelection === "rock") & 
+            (computerScore === 0 || computerScore === 1)) {
             result.textContent = lose;
+            gameScore('computer');        
+    }   else if ((playerSelection === "rock" && computerSelection === "paper" ||
+            playerSelection === "paper" && computerSelection === "scissors" ||
+            playerSelection === "scissors" && computerSelection === "rock") & computerScore === 2) {
+            result.textContent = loseAgain;
+            gameScore('computer');
+    }   else if ((playerSelection === "rock" && computerSelection === "paper" ||
+            playerSelection === "paper" && computerSelection === "scissors" ||
+            playerSelection === "scissors" && computerSelection === "rock") & computerScore === 3) {
+            result.textContent = 'Careful!';
+            gameScore('computer');
+    }   else if (computerScore = 4) {
+            result.textContent = 'This is scary!';
             gameScore('computer');
     }
 }
