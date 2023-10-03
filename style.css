@@ -33,6 +33,7 @@ button {
     background-color: white;
     color: black;
     padding: 10px;
+    border-color: black;
     border-radius: 10px;
     box-shadow: 10px 7px black;
     -webkit-transition: transform .3s ease-in-out;
