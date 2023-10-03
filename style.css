@@ -12,13 +12,17 @@ body {
     
 }
 
+.header {
+    font-weight: bolder;
+}
+
 .content-container {
     /* border: solid blue; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
-    gap: 50px;
+    gap: 30px;
     margin: 300px 0;
 }
 
@@ -32,9 +36,29 @@ button {
     border-radius: 10px;
 }
 
+button:hover {
+    background-color: rgb(54, 54, 54);
+    scale: 1.1;
+}
+
 #button-wrapper {
     /* border: solid black; */
     display: flex;
     justify-content: space-between;
     gap: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    /* border: solid black; */
+    display: flex;
+    padding: 10px;
 }
