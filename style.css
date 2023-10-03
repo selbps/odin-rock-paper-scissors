@@ -47,6 +47,7 @@ button:hover {
     -ms-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    background-color: rgb(234, 234, 234);
 }
 
 #button-wrapper {
