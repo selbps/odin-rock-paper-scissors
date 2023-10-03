@@ -30,15 +30,23 @@ button {
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
     font: bold;
-    background-color: grey;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 10px 7px black;
+    -webkit-transition: transform .3s ease-in-out;
+    -moz-transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
 }
 
 button:hover {
-    background-color: rgb(54, 54, 54);
-    scale: 1.1;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 #button-wrapper {
