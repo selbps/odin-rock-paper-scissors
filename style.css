@@ -2,7 +2,7 @@ body {
     /* border: solid black; */
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
-    font-size: large;
+    font-size: larger;
     display: flex;
     flex-direction: column;
     justify-content: center;
