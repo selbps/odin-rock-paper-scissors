@@ -24,7 +24,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     let win = "You win!";
     let winAgain = 'On a roll!';
-    let lose = "You lose!";
+    let lose = "You lost!";
     let loseAgain = 'Oh, you lost again.';
     let tie = "Tie! One more!";
     if (playerSelection === computerSelection) {
