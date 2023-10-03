@@ -9,7 +9,7 @@ body {
     align-items: center;
     text-align: center;
     flex: 1;
-    
+    height: 900;
 }
 
 .header {
@@ -54,7 +54,7 @@ button:hover {
     /* border: solid black; */
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 30px;
 }
 
 a {
@@ -69,5 +69,9 @@ a:hover {
 .footer {
     /* border: solid black; */
     display: flex;
-    padding: 10px;
+    padding: 20px;
+}
+
+.footer-container {
+    /* border: solid grey; */
 }
